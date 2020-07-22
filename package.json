@@ -1,11 +1,11 @@
 {
   "name": "generator-lyw-vue",
-  "version": "0.0.0",
-  "description": "test",
+  "version": "1.0.0",
+  "description": "vue-template-cli",
   "homepage": "",
   "author": {
-    "name": "liyiwei",
-    "email": "13584829170@139.com",
+    "name": "aloulou",
+    "email": "wsxrk007@163.com",
     "url": ""
   },
   "files": [
