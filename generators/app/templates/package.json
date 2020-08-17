@@ -28,6 +28,8 @@
     "compression-webpack-plugin": "^4.0.0",
     "image-webpack-loader": "^6.0.0",
     "terser-webpack-plugin": "^3.0.7",
+    "stylelint": "^13.6.1",
+    "stylelint-config-standard": "^20.0.0",
     "webpack-bundle-analyzer": "^3.8.0"
   },
   "eslintConfig": {
@@ -50,6 +52,11 @@
         }
       ]
     }
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard"
+    ]
   },
   "browserslist": [
     "> 1%",
