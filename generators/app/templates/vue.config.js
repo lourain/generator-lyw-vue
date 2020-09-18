@@ -1,6 +1,7 @@
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const TerserPlugin = require('terser-webpack-plugin');
+const analyzFlag = process.env.ANALYZ_PORT;
 
 const compress = new CompressionWebpackPlugin({
   test: /\.js(\?.*)?$/i,
@@ -20,7 +21,7 @@ module.exports = {
     }
   },
   devServer: {
-    // open: true,
+    open: true,
     proxy: {
       '^/api/warungku': {
         target: 'http://192.168.10.127:18087',
@@ -32,7 +33,11 @@ module.exports = {
   configureWebpack: {
     plugins: [
       compress,
-      new BundleAnalyzerPlugin(),
+      new BundleAnalyzerPlugin({
+        analyzerMode: analyzFlag ? 'server' : 'disabled', // 不启动展示打包报告的http服务器
+        openAnalyzer: !!analyzFlag
+        // generateStatsFile: true, // 是否生成stats.json文件
+      }),
     ]
   },
   chainWebpack: config => {
